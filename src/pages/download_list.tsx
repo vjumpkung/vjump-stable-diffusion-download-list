@@ -28,7 +28,7 @@ import copy from "copy-to-clipboard";
 import type { InferGetServerSidePropsType } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import Link from "next/link";
 
 function paginate(current: number, max: number) {
   if (!current || !max) return null;
@@ -70,25 +70,24 @@ export default function DownloadList({
   datas,
   fetchurl,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const router = useRouter();
-
   const isFirstPage = datas?.current_page == 1;
   const isLastPage = datas?.current_page == datas?.total_pages;
-  const blankArray = paginate(
-    datas?.current_page as number,
-    datas?.total_pages as number
-  );
+  const blankArray =
+    (datas?.total_items as number) > 0
+      ? paginate(datas?.current_page as number, datas?.total_pages as number)
+      : null;
 
   return (
     <Layout>
       <Head>
         <title>SD Download List - Public Download List</title>
       </Head>
+      <h1 className="text-4xl font-semibold py-5">Download List</h1>
       <div className="grid grid-rows-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 justify-center">
         {datas?.data?.map((data) => {
           const previewImage = data.download_list[0].previewImage
             ? data.download_list[0].previewImage?.url
-            : "/huggingface-2.svg";
+            : "/no_preview.svg";
           const nsfwCheck = data.download_list[0].previewImage
             ? data.download_list[0].previewImage?.nsfwLevel
             : 0;
@@ -96,7 +95,7 @@ export default function DownloadList({
           return (
             <Card className="mx-auto w-full" key={data._id}>
               <CardHeader>
-                <CardTitle className="truncate">{data.title}</CardTitle>
+                <CardTitle className="truncate py-1">{data.title}</CardTitle>
                 <CardDescription className="truncate">
                   {data.description}
                   <br />
@@ -133,14 +132,15 @@ export default function DownloadList({
                   </PopoverTrigger>
                   <PopoverContent>Copied</PopoverContent>
                 </Popover>
-
-                <Button size={"sm"}>รายละเอียด</Button>
+                <Link href={`/download_list/${data._id}`}>
+                  <Button size={"sm"}>Details</Button>
+                </Link>
               </CardFooter>
             </Card>
           );
         })}
       </div>
-      <div className="pt-3 pb-3">
+      <div className={`pt-3 pb-3 ${blankArray === null ? "hidden" : ""}`}>
         <Pagination>
           <PaginationContent>
             {isFirstPage ? null : (
