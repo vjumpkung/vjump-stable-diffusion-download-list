@@ -1,10 +1,10 @@
 import "@/styles/globals.css";
 import { PublicEnvScript } from "next-runtime-env";
 import type { AppProps } from "next/app";
-import { Kanit } from "next/font/google";
+import { Inter, Kanit } from "next/font/google";
 
-export const kanit = Kanit({
-  subsets: ["latin", "thai"],
+export const inter = Inter({
+  subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });

@@ -2,8 +2,10 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <Layout>
       <Head>
@@ -16,18 +18,22 @@ export default function Home() {
               SD Download List
             </h1>
             <p className="mx-auto max-w-3xl text-lg md:text-xl">
-              แหล่งรวม Model ต่างๆ เพื่อสำหรับผู้ที่เริ่มต้นใช้งาน Stable
-              Diffusion
+              แหล่งรวม Model ต่างๆ เพื่อสำหรับผู้ใช้งาน Stable Diffusion
             </p>
-            <Button>
-              <Link href="/download_list">
-                ดูรายการ SD Model Pack ที่มีการ share ทั้งหมด
-              </Link>
+            <Button onClick={() => router.push("/download_list")}>
+              Public SD Download List
             </Button>
             <br />
-            <Button>
-              <Link href="#">vjumpkung ComfyUI Colab</Link>
-            </Button>
+            <Link href="#" target="_blank" rel="noopener noreferrer">
+              <Button className="mx-3 mt-6" variant={"outline"}>
+                vjumpkung ComfyUI Colab
+              </Button>
+            </Link>
+            <Link href="#" target="_blank" rel="noopener noreferrer">
+              <Button className="mx-3 mt-6" variant={"outline"}>
+                vjumpkung A1111 WebUI Colab
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

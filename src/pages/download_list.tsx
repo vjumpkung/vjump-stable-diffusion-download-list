@@ -82,7 +82,7 @@ export default function DownloadList({
   return (
     <Layout>
       <Head>
-        <title>SD Download List - Share Download List</title>
+        <title>SD Download List - Public Download List</title>
       </Head>
       <div className="grid grid-rows-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 justify-center">
         {datas?.data?.map((data) => {
@@ -96,11 +96,11 @@ export default function DownloadList({
           return (
             <Card className="mx-auto w-full" key={data._id}>
               <CardHeader>
-                <CardTitle>{data.title}</CardTitle>
+                <CardTitle className="truncate">{data.title}</CardTitle>
                 <CardDescription className="truncate">
                   {data.description}
                   <br />
-                  <span>shared by : {data.author}</span>
+                  <span className="truncate">shared by : {data.author} </span>
                 </CardDescription>
               </CardHeader>
               <CardContent>
