@@ -24,14 +24,23 @@ export default function Home() {
               Public SD Download List
             </Button>
             <br />
-            <Link href="#" target="_blank" rel="noopener noreferrer">
+            <Link
+              href="https://colab.research.google.com/github/vjumpkung/vjump-sd-webui-colab/blob/main/vjumpkung_comfyui_colab.ipynb"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button className="mx-3 mt-6" variant={"outline"}>
                 vjumpkung ComfyUI Colab
               </Button>
             </Link>
-            <Link href="#" target="_blank" rel="noopener noreferrer">
-              <Button className="mx-3 mt-6" variant={"outline"}>
-                vjumpkung A1111 WebUI Colab
+            <Link
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pointer-events-none cursor-not-allowed"
+            >
+              <Button className="mx-3 mt-6" variant={"outline"} disabled>
+                vjumpkung A1111 WebUI Colab (Coming Soon)
               </Button>
             </Link>
           </div>

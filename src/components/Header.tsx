@@ -28,6 +28,15 @@ export default function Header() {
             >
               Download List
             </Link>
+            <Link
+              href="https://vjump-sd-download-list-docs.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="dark:text-white align-middle font-medium text-sm border-b-2 border-transparent transition-colors hover:text-gray-900 hover:border-gray-100 dark:hover:text-gray-50 dark:hover:border-gray-800"
+              prefetch={false}
+            >
+              Docs
+            </Link>
             <ModeToggle />
           </nav>
         </div>

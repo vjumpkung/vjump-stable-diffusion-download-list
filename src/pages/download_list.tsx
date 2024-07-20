@@ -58,7 +58,7 @@ export const getServerSideProps = async (ctx: any) => {
     params: {
       query: {
         page: ctx.query.page ? ctx.query.page : 1,
-        limit: 8,
+        limit: 12,
       },
     },
   });
@@ -83,7 +83,7 @@ export default function DownloadList({
         <title>SD Download List - Public Download List</title>
       </Head>
       <h1 className="text-4xl font-semibold py-5">Download List</h1>
-      <div className="grid grid-rows-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 justify-center">
+      <div className="grid grid-rows-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 justify-center">
         {datas?.data?.map((data) => {
           const previewImage = data.download_list[0].previewImage
             ? data.download_list[0].previewImage?.url
