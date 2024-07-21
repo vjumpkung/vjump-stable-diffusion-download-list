@@ -40,7 +40,7 @@ export default function Home() {
               className="pointer-events-none cursor-not-allowed"
             >
               <Button className="mx-3 mt-6" variant={"outline"} disabled>
-                vjumpkung A1111 WebUI Colab (Coming Soon)
+                vjumpkung A1111 WebUI Colab
               </Button>
             </Link>
           </div>

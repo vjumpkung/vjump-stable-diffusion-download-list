@@ -16,14 +16,14 @@ export default function Header() {
           <nav className="ml-auto items-center space-x-4 ">
             <Link
               href="/"
-              className="dark:text-white align-middle font-medium text-sm border-b-2 border-transparent transition-colors hover:text-gray-900 hover:border-gray-100 dark:hover:text-gray-50 dark:hover:border-gray-800"
+              className="dark:text-white align-middle font-medium text-sm border-b-2 border-transparent transition-colors hover:text-gray-900 hover:border-gray-100 dark:hover:text-gray-50 dark:hover:border-gray-800 hidden sm:inline"
               prefetch={false}
             >
               Home
             </Link>
             <Link
               href="/download_list"
-              className="dark:text-white align-middle font-medium text-sm border-b-2 border-transparent transition-colors hover:text-gray-900 hover:border-gray-100 dark:hover:text-gray-50 dark:hover:border-gray-800"
+              className="dark:text-white align-middle font-medium text-sm border-b-2 border-transparent transition-colors hover:text-gray-900 hover:border-gray-100 dark:hover:text-gray-50 dark:hover:border-gray-800 hidden sm:inline"
               prefetch={false}
             >
               Download List
