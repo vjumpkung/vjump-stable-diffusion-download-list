@@ -34,12 +34,11 @@ export default function Home() {
               </Button>
             </Link>
             <Link
-              href="#"
+              href="https://colab.research.google.com/github/vjumpkung/vjump-sd-webui-colab/blob/main/vjumpkung_A1111_Stable_Diffusion_WebUI.ipynb"
               target="_blank"
               rel="noopener noreferrer"
-              className="pointer-events-none cursor-not-allowed"
             >
-              <Button className="mx-3 mt-6" variant={"outline"} disabled>
+              <Button className="mx-3 mt-6" variant={"outline"}>
                 vjumpkung A1111 WebUI Colab
               </Button>
             </Link>
